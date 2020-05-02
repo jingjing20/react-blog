@@ -17,17 +17,16 @@ const Header = () => {
           <Menu mode="horizontal">
             <Menu.Item key="home">
               <HomeOutlined />
-
-                    首页
-                </Menu.Item>
+              首页
+              </Menu.Item>
             <Menu.Item key="video">
               <YoutubeOutlined />
               视频
-                </Menu.Item>
+            </Menu.Item>
             <Menu.Item key="life">
               <CloudOutlined />
               生活
-                </Menu.Item>
+            </Menu.Item>
           </Menu>
         </Col>
       </Row>
