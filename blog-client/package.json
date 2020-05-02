@@ -11,8 +11,10 @@
     "@zeit/next-css": "^1.0.1",
     "antd": "^4.2.0",
     "babel-plugin-import": "^1.13.0",
+    "markdown-navbar": "^1.4.1",
     "next": "9.3.6",
     "react": "16.13.1",
-    "react-dom": "16.13.1"
+    "react-dom": "16.13.1",
+    "react-markdown": "^4.3.1"
   }
 }
