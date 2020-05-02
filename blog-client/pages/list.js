@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Head from 'next/head'
-import { Row, Col, List } from 'antd'
+import { Row, Col, List, Breadcrumb } from 'antd'
 import { FolderFilled, ScheduleFilled, FireFilled } from '@ant-design/icons'
 import Header from '../components/Header'
 import Author from '../components/Author'
@@ -8,9 +8,7 @@ import Advert from '../components/Advert'
 import Footer from '../components/Footer'
 
 
-import '../public/style/pages/index.css'
-
-export default function Home() {
+export default function MyList() {
 
   const [mylist, serMylist] = useState(
     [
@@ -29,6 +27,13 @@ export default function Home() {
       <Row className="comm-main" type="flex" justify="center">
 
         <Col className="comm-left" xs={24} sm={24} md={16} lg={18} xl={14}>
+
+          <div className="bread-div">
+            <Breadcrumb>
+              <Breadcrumb.Item><a href="/">首页</a></Breadcrumb.Item>
+              <Breadcrumb.Item>视频列表</Breadcrumb.Item>
+            </Breadcrumb>
+          </div>
           <List
             header={<div>最新日志</div>}
             itemLayout="vertical"
