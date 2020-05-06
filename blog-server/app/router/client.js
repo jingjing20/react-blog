@@ -5,5 +5,6 @@ module.exports = app => {
   router.get('/client/getArticleList', controller.client.home.getArticleList);
   router.get('/client/getArticleById/:id', controller.client.home.getArticleById);
   router.get('/client/getTypeInfo', controller.client.home.getTypeInfo);
+  router.get('/client/getListById/:id', controller.client.home.getListById);
 };
 
