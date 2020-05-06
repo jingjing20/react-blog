@@ -10,11 +10,30 @@ import Footer from '../components/Footer'
 import axios from 'axios'
 import '../public/style/pages/index.css'
 import servicePath from '../config/apiUrl'
+import marked from 'marked'
+import hljs from "highlight.js";
+import 'highlight.js/styles/monokai-sublime.css';
 
 export default function Home(list) {
 
 	const [mylist, serMylist] = useState(list.data)
+	const renderer = new marked.Renderer();
+	marked.setOptions({
+		renderer: renderer,
+		gfm: true,
+		pedantic: false,
+		sanitize: false,
+		tables: true,
+		breaks: false,
+		smartLists: true,
+		smartypants: false,
+		sanitize: false,
+		xhtml: false,
+		highlight: function (code) {
+			return hljs.highlightAuto(code).value;
+		}
 
+	});
 	return (
 		<>
 			<Head>
@@ -40,7 +59,10 @@ export default function Home(list) {
 									<span><FolderFilled /> {item.typeName}</span>
 									<span><FireFilled /> {item.view_count}人</span>
 								</div>
-								<div className="list-context">{item.introduce}</div>
+								<div className="list-context"
+									dangerouslySetInnerHTML={{ __html: marked(item.introduce) }}
+								>
+								</div>
 							</List.Item>
 						)}
 					/>

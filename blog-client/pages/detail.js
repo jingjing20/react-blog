@@ -94,18 +94,18 @@ const Detailed = (props) => {
 }
 
 Detailed.getInitialProps = async (context) => {
-  console.log(context.query.id)
   let id = context.query.id
-  const promise = new Promise((resolve) => {
-
-    axios(servicePath.getArticleById + id).then(
-      (res) => {
-        console.log(res)
-        resolve(res.data.data[0])
-      }
-    )
-  })
-  return await promise
+  // const promise = new Promise((resolve) => {
+  //   axios(servicePath.getArticleById + id).then(
+  //     (res) => {
+  //       // console.log(res)
+  //       resolve(res.data.data[0])
+  //     }
+  //   )
+  // })
+  // return await promise
+  let res = await axios(servicePath.getArticleById + id)
+  return res.data.data[0]
 }
 
 export default Detailed
