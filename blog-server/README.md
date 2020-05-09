@@ -1,6 +1,6 @@
-# blog-server
+# service
 
-react 建立博客网站业务中台
+
 
 ## QuickStart
 
@@ -31,6 +31,3 @@ $ npm stop
 
 
 [egg]: https://eggjs.org
-
-### bug如下
-- node 连接 mysql 出错

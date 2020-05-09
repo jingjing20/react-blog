@@ -1,6 +1,8 @@
 .footer-div{
-  text-align: center;
-  width: 100%;
-  padding: 1rem;
-  color:#888;
+    /* 文字居中 */
+    text-align: center; 
+    /* 这个盒子是100%z占屏的,就不用栅格了 */
+    width: 100%; 
+    padding: 1rem;
+    color: #888;
 }

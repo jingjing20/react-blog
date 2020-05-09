@@ -1,95 +1,113 @@
-.markdown-content{
-  font-size:16px !important;
-  max-height: 745px;
+/* 左边多行文本的样式 */
+.markdown-content{ 
+    font-size:16px !important;
+    max-height: 745px;
 }
+/* 右边预览框的样式 */
 .show-html{
-  padding:10px;
-  border:1px solid #ddd;
-  border-radius: 5px;
-  font-size:16px;
-  height: 745px;
-  background-color: #f0f0f0;
-  overflow: auto;
+    padding:10px;
+    border:1px solid #ddd;
+    border-radius: 5px;
+    font-size:16px;
+    height: 745px;
+    background-color: #f0f0f0;
+    overflow: auto;
+    /* 如果内容被修剪，则浏览器会显示滚动条以便查看其余的内容。 */
 }
 
 .show-html h1{
-  font-size:30px;
+    font-size:30px;
 }
 
 .show-html h2{
-  font-size:28px;
-  border-bottom: 1px solid #cbcbcb;
+    font-size:28px;
+    border-bottom: 1px solid #cbcbcb;
 }
 .show-html h3{
-  font-size:24px;
+    font-size:24px;
 }
 
 .show-html pre{
-  display: block;
-  background-color: #f0f0f0;
-  padding: 5px;
-  border-radius: 5px;
+    display: block;
+    background-color: #f0f0f0;
+    padding: 5px;
+    border-radius: 5px;
 }
 .show-html pre>code{
-  color: #000;
-  background-color: #f0f0f0;
+    color: #000;
+    background-color: #f0f0f0;
 }
 .show-html code {
-  background-color: #fff5f5;
-  padding: 5px 10px;
-  border-radius: 5px;
-  margin: 0px 3px; 
-  color: #ff502c; 
+    background-color: #fff5f5;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin: 0px 3px; 
+    color: #ff502c; 
 }
 .show-html blockquote{
-  border-left:4px solid #cbcbcb ;
-  padding: 10px 10px 10px 30px; 
-  background-color: #f8f8f8;
+    border-left:4px solid #cbcbcb ;
+    padding: 10px 10px 10px 30px; 
+    background-color: #f8f8f8;
 }
+/* 文章简介markdown */
+.markdown-introduce{
+    margin-bottom: 5px;
+}
+/* 文章简介预览 */
 .introduce-html{
-  padding:10px;
-  border:1px solid #ddd;
-  border-radius: 5px;
-  font-size:16px;
-
-  background-color: #f0f0f0;
+    padding:10px;
+    border:1px solid #ddd;
+    border-radius: 5px;
+    font-size:16px;
+    margin-bottom: 5px;
+    background-color: #f0f0f0;
 }
 
 
 .introduce-html h1{
-  font-size:30px;
+    font-size:30px;
 }
 
 .introduce-html h2{
-  font-size:28px;
-  border-bottom: 1px solid #cbcbcb;
+    font-size:28px;
+    border-bottom: 1px solid #cbcbcb;
 }
 .introduce-html h3{
-  font-size:24px;
+    font-size:24px;
 }
 
 .introduce-html pre{
-  display: block;
-  background-color: #f0f0f0;
-  padding: 5px;
-  border-radius: 5px;
+    display: block;
+    background-color: #f0f0f0;
+    padding: 5px;
+    border-radius: 5px;
 }
 .introduce-html pre>code{
-  color: #000;
-  background-color: #f0f0f0;
+    color: #000;
+    background-color: #f0f0f0;
 }
 .introduce-html code {
-  background-color: #fff5f5;
-  padding: 5px 10px;
-  border-radius: 5px;
-  margin: 0px 3px; 
-  color: #ff502c; 
+    background-color: #fff5f5;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin: 0px 3px; 
+    color: #ff502c; 
 }
 .introduce-html blockquote{
-  border-left:4px solid #cbcbcb ;
-  padding: 10px 10px 10px 30px; 
-  background-color: #f8f8f8;
+    border-left:4px solid #cbcbcb ;
+    padding: 10px 10px 10px 30px; 
+    background-color: #f8f8f8;
 }
+/* 发布日期 */
 .date-select{
-  margin-top:10px;
+    margin-top:10px;
+}
+/* 每个Row都加一个 */
+.ant-row{
+    margin-bottom: 20px;
+}
+.ant-btn{
+    margin-right: 10px;
+    margin-bottom: 10px;
+    
 }

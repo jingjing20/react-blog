@@ -1,22 +1,31 @@
 import { Avatar, Divider } from 'antd'
-import { WechatFilled, GithubFilled, QqCircleFilled } from '@ant-design/icons'
-import '../public/style/components/Author.css'
+import '../public/style/components/author.css'
+import {
+    GithubOutlined,
+    QqOutlined,
+    WechatOutlined
+} from '@ant-design/icons'
+
+// 用react-hooks形式声明组件
 const Author = () => {
-
-  return (
-    <div className="author-div comm-box">
-      <div> <Avatar size={100} src="http://image.jinghao.xyz/blog/20200422/mvj4kgDNQKaJ.jpg" /></div>
-      <div className="author-introduction">
-        热爱篮球的程序员，专注于WEB和移动前端开发。一个要靠打代码发家致富的阳光大男孩。
-              <Divider>社交账号</Divider>
-        <Avatar size={28} icon={<QqCircleFilled />} className="account" />
-        <Avatar size={28} icon={<GithubFilled />} className="account" />
-        <Avatar size={28} icon={<WechatFilled />} className="account" />
-
-      </div>
-    </div>
-  )
-
+    return (
+        <div className="author-div comm-box">
+            {/* 注意这里的size要用{}包，不能写"" */}
+            <div><Avatar size={100} src="http://pic2.zhimg.com/50/v2-958d33fd4a4de747058adcafdf753074_hd.jpg"></Avatar></div>
+            {/* 介绍 */}
+            <div className="author-introduction">
+            微微就是秋天里每片落叶,微微就是彩虹里每滴雨点,微微她很渺小却从不疲倦,微微就是我们
+            {/* antd的分割线，里面可以加入字，可以这样为右侧标签分隔 */}
+            <Divider>社交账号</Divider>
+            {/* 这个图标是antd中自带的，引入Avator就能用(好像v4用不了) */}
+            {/* <Avatar size={28} icon="github" className="account"></Avatar> */}
+            <Avatar size={28} icon={<GithubOutlined />} className="account"></Avatar>
+            <Avatar size={28} icon={<QqOutlined />} className="account"></Avatar>
+            <Avatar size={28} icon={<WechatOutlined />} className="account"></Avatar>
+            </div>
+        </div>
+    )
 }
 
-export default Author
+//把组件导出
+export default Author;
