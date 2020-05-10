@@ -7,7 +7,6 @@ const Advert = () => {
             <div><img src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=149394306,784079254&fm=26&gp=0.jpg" width="100%"></img></div>
             <div><img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1588417906991&di=31c53f82e79fcf8cb575271f4b1d0a08&imgtype=0&src=http%3A%2F%2Fimg.taopic.com%2Fuploads%2Fallimg%2F111221%2F10011-1112211FS033.jpg" width="100%"></img></div>
             <div><img src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1181001283,3304105179&fm=26&gp=0.jpg" width="100%"></img></div>
-
         </div>
     )
 }

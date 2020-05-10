@@ -14,19 +14,19 @@
     text-align: left;
 }
 .header-txt{
-    font-size:.6rem;
+    font-size:1rem;
     color: #999;
     /* 让他们在同一行 */
     display: inline-block; 
-    padding-left:.3rem;
+    padding-left:.5rem;
 }
 /* menu的样式要按antd自己的类名才能改成功 */
 .ant-meu{
     line-height: 2.8rem;
 }
 .ant-menu-item{
-    font-size:.7rem !important;
-    padding-left:1rem;
-    padding-right:1rem;
+    font-size:1rem !important;
+    padding-left:0.3rem;
+    padding-right:0.3rem;
 
 }

@@ -3,7 +3,6 @@ import {
 	DesktopOutlined,
 	PieChartOutlined,
 	FileOutlined,
-	TeamOutlined,
 	UserOutlined,
 } from '@ant-design/icons';
 import React, { useState } from 'react'; //hooks组件要加
@@ -25,7 +24,7 @@ function AdminIndex(props) {
 
 	// 点击文章管理
 	const handleClickArticle = e => { //传入一个e,因为这里需要用它的key
-		if (e.key == 'addArticle') {
+		if (e.key === 'addArticle') {
 			props.history.push('/index/add')
 		} else {
 			props.history.push('/index/list')
@@ -40,10 +39,10 @@ function AdminIndex(props) {
 				<Menu theme="dark" defaultSelectedKeys={['1']} mode="inline">
 					<Menu.Item key="1" icon={<PieChartOutlined />}>
 						工作台
-                    </Menu.Item>
+            </Menu.Item>
 					<Menu.Item key="addArticle" icon={<DesktopOutlined />} onClick={handleClickArticle}>
 						添加文章
-                    </Menu.Item>
+            </Menu.Item>
 					{/* 点击文章管理的时候 调动方法，根据传入的key值进行跳转 */}
 					<SubMenu key="sub1" onClick={handleClickArticle} icon={<UserOutlined />} title="文章管理">
 						{/* <Menu.Item key="3">添加文章</Menu.Item>
@@ -53,7 +52,7 @@ function AdminIndex(props) {
 					</SubMenu>
 					<Menu.Item key="9" icon={<FileOutlined />} >
 						留言管理
-                    </Menu.Item>
+          </Menu.Item>
 				</Menu>
 			</Sider>
 			<Layout className="site-layout">
@@ -77,7 +76,7 @@ function AdminIndex(props) {
 						</div>
 					</div>
 				</Content>
-				<Footer style={{ textAlign: 'center' }}>Linan 临安.com</Footer>
+				<Footer style={{ textAlign: 'center' }}>jinghao.xyz</Footer>
 			</Layout>
 		</Layout>
 	);

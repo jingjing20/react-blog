@@ -1,11 +1,11 @@
 import Head from 'next/head'
-import React,{ useState } from 'react';
+import React, { useState } from 'react';
 // import { Button } from 'antd'
 import Header from '../components/Header'
 import Author from '../components/Author'
 import Advert from '../components/Advert'
 import Footer from '../components/Footer'
-import { Row, Col, List} from 'antd'
+import { Row, Col, List } from 'antd'
 import {
   CalendarOutlined,
   FolderOpenOutlined,
@@ -32,18 +32,18 @@ const Home = (list) => {
   //然后配置marked，如何解析markdown
   // 有一个方法,里面传递的是一个对象,这个对象就是我们所有设置的属性都要在这里写
   marked.setOptions({
-    renderer:renderer,
-    gfm:true, //启动类似github样式的markdown //就是样式渲染的方式跟github一样
+    renderer: renderer,
+    gfm: true, //启动类似github样式的markdown //就是样式渲染的方式跟github一样
     pedantic: false, //有一个容错的代码在里面，true就是完全不容错,不符合markdown的都不行
     sanitize: false, //原始输出，忽略html标签（就是比如有视频直接插入，视频渲染，如果填true就会忽略html，视频就不会显示），我们不忽略
-    tables:true, //是否允许我们根据GitHub输出表格，样式是github的样式
+    tables: true, //是否允许我们根据GitHub输出表格，样式是github的样式
     // 记得tables为true的时候，gfm一定要也要填写上，否则会失效
     breaks: false, //是否支持github的换行符,也是必须有gfm:true//我们还是使用原来的，不使用github的样式
     smartLists: true, //就是给我们自动渲染我们的列表,默认是false-》自己写
     // highlight这里要写一个方法，是如何让让代码高亮，要code进去
-    highlight: function(code) {
+    highlight: function (code) {
       // 返回的值就是用highlight插件执行highlightAuto(我们不传递我们写的是css代码，还是js代码，它会自动检测是哪种(所以有点慢，传了的话会快点)，然后返回)
-      return hljs.highlightAuto(code).value 
+      return hljs.highlightAuto(code).value
     }
   });
 
@@ -62,7 +62,7 @@ const Home = (list) => {
               itemLayout="verical"都是一行一行横着的列,让我们的列是竖向的
               dataSource数据源
               renderItem怎么渲染数据每一项,里面是要一个函数的,我们直接返回JSX*/}
-          <List 
+          <List
             header={<div>最新日志</div>}
             itemLayout="vertical"
             dataSource={mylist}
@@ -71,7 +71,7 @@ const Home = (list) => {
               <List.Item>
                 <div className="list-title">
                   {/* next的路由传参 */}
-                  <Link href={{pathname:'/detailed',query:{id:item.id}}}>
+                  <Link href={{ pathname: '/detailed', query: { id: item.id } }}>
                     <a>
                       {item.title}
                     </a>
@@ -85,7 +85,7 @@ const Home = (list) => {
                 </div>
                 {/* 使用markdown */}
                 <div className="list-context"
-                dangerouslySetInnerHTML={{__html:marked(item.introduce)}}></div>
+                  dangerouslySetInnerHTML={{ __html: marked(item.introduce) }}></div>
               </List.Item>
             )}
           />
@@ -107,16 +107,13 @@ const Home = (list) => {
 //组件自带的方法
 //从远端读取是要有一个时间的，所以用异步
 Home.getInitialProps = async () => {
-  // 传一个resolve,里面的方法就是用axios读取远端的方法，用之前要引入import axios
-  const promise = new Promise((resolve)=>{
+  const promise = new Promise((resolve) => {
     // axios默认的方法就是get，所以直接加括号
     // 括号里的参数：远端获取数据的参数，是接口地址
     // 读取完数据后就then,其中的res就是我们获得的结果
     // axios('http://127.0.0.1:7001/default/getArticleList').then(
     axios(servicePath.getArticleList).then(
-
-      (res)=>{
-        console.log('---->',res.data)
+      (res) => {
         resolve(res.data)
       }
     )

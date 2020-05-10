@@ -44,13 +44,13 @@ function ArticleList(props) { //里面要传props，属性
     }
     // 修改文章跳转的方法
     const updateArticle = (id) => {
-        // console.log(id);
+        console.log(id)
         axios({
             method: 'get',
             url: servicePath.getArticleById + id,
             withCredentials: true
         }).then(
-            res => {
+            (res) => {
                 if (res.data.isSuccess !== '') {
                     props.history.push('/index/add/' + id) //跳转 //需要配置一下路由AdminIndex.js
                 } else {

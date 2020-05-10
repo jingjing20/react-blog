@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import React,{ useState,useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 // import { Button } from 'antd'
 import Header from '../components/Header'
 import Author from '../components/Author'
@@ -28,24 +28,24 @@ const MyList = (list) => {
   // 文章列表有很多文章,用数组
   const [mylist, setMylist] = useState(list.data) //两层data,因为我们在sql那里自己加了一层data
   //当里面的内容发生变化都进行一次执行
-  useEffect(()=>{
+  useEffect(() => {
     setMylist(list.data) //就是重新把myList进行重新赋值，然后页面就会发生变化
   })
 
   const renderer = new marked.Renderer()
   marked.setOptions({
-    renderer:renderer,
-    gfm:true, //启动类似github样式的markdown //就是样式渲染的方式跟github一样
+    renderer: renderer,
+    gfm: true, //启动类似github样式的markdown //就是样式渲染的方式跟github一样
     pedantic: false, //有一个容错的代码在里面，true就是完全不容错,不符合markdown的都不行
     sanitize: false, //原始输出，忽略html标签（就是比如有视频直接插入，视频渲染，如果填true就会忽略html，视频就不会显示），我们不忽略
-    tables:true, //是否允许我们根据GitHub输出表格，样式是github的样式
+    tables: true, //是否允许我们根据GitHub输出表格，样式是github的样式
     // 记得tables为true的时候，gfm一定要也要填写上，否则会失效
     breaks: false, //是否支持github的换行符,也是必须有gfm:true//我们还是使用原来的，不使用github的样式
     smartLists: true, //就是给我们自动渲染我们的列表,默认是false-》自己写
     // highlight这里要写一个方法，是如何让让代码高亮，要code进去
-    highlight: function(code) {
+    highlight: function (code) {
       // 返回的值就是用highlight插件执行highlightAuto(我们不传递我们写的是css代码，还是js代码，它会自动检测是哪种(所以有点慢，传了的话会快点)，然后返回)
-      return hljs.highlightAuto(code).value 
+      return hljs.highlightAuto(code).value
     }
   });
   return (
@@ -63,7 +63,7 @@ const MyList = (list) => {
             <Breadcrumb>
               {/* 里面的子导航，是跳转链接 */}
               <Breadcrumb.Item><a href="/">首页</a></Breadcrumb.Item>
-              <Breadcrumb.Item>视频教程</Breadcrumb.Item>
+              <Breadcrumb.Item>技术文章</Breadcrumb.Item>
             </Breadcrumb>
           </div>
           {/* 注意List组件是一个半闭合标签的,它里面是通过属性prop进行设置 */}
@@ -71,7 +71,7 @@ const MyList = (list) => {
               itemLayout="verical"都是一行一行横着的列,让我们的列是竖向的
               dataSource数据源
               renderItem怎么渲染数据每一项,里面是要一个函数的,我们直接返回JSX*/}
-          <List 
+          <List
             header={<div>最新日志</div>}
             itemLayout="vertical"
             dataSource={mylist}
@@ -80,7 +80,7 @@ const MyList = (list) => {
               <List.Item>
                 {/* 加上link能跳转到详细页 */}
                 <div className="list-title">
-                  <Link href={{pathname:'/detailed',query:{id:item.id}}}>
+                  <Link href={{ pathname: '/detailed', query: { id: item.id } }}>
                     <a>
                       {item.title}
                     </a>
@@ -93,7 +93,7 @@ const MyList = (list) => {
                   <span><FireOutlined /> {item.view_count}人</span>
                 </div>
                 <div className="list-context"
-                dangerouslySetInnerHTML={{__html:marked(item.introduce)}}></div>
+                  dangerouslySetInnerHTML={{ __html: marked(item.introduce) }}></div>
               </List.Item>
             )}
           />
@@ -119,13 +119,13 @@ MyList.getInitialProps = async (context) => {
   let id = context.query.id //？？
 
   // 传一个resolve,里面的方法就是用axios读取远端的方法，用之前要引入import axios
-  const promise = new Promise((resolve)=>{
+  const promise = new Promise((resolve) => {
     // axios默认的方法就是get，所以直接加括号
     // 括号里的参数：远端获取数据的参数，是接口地址
     // 读取完数据后就then,其中的res就是我们获得的结果
-    axios(servicePath.getListById+id).then( //因为要获取id,所以传递一个上下文环境进来context
+    axios(servicePath.getListById + id).then( //因为要获取id,所以传递一个上下文环境进来context
 
-      (res)=> resolve(res.data)
+      (res) => resolve(res.data)
     )
   })
   // axios是必须要有一个返回值的,而且必须是await，所以一定要记得加

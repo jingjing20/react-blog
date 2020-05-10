@@ -5,9 +5,9 @@ const Footer = () => (
     // 一个外层包裹
     <div className="footer-div">
         {/* 系统是由什么驱动的 */}
-        <div>系统是由React + Node(cover或者刚上层的框架) + Ant Design(UI库)</div>
+        <div>系统是由React + next.js + egg.js + Ant Design</div>
         {/* 版权信息 */}
-        <div>@Linan 临安</div>
+        <div>@jingjing</div>
     </div>
 )
 

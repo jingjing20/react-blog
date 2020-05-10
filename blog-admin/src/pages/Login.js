@@ -47,7 +47,7 @@ function Login(props) {
                 // console.log(res.data.data);
                 // 把放重复提交先放这里
                 setIsLoading(false) //撤掉，让它能提交
-                if (res.data.data == '登录成功') { //我们自己写的data
+                if (res.data.data === '登录成功') { //我们自己写的data
                     // 把返回的openId缓存起来
                     localStorage.setItem('openId', res.data.openId) //是H5的自带的，也是key-value形式
                     // 然后跳转
@@ -67,7 +67,7 @@ function Login(props) {
                 spinning是它的状态
                 onChange就是发生改变的时候有什么动作，放input中就是只要输入改变了，就用setUserName改变值*/}
             <Spin tip="Loading..." spinning={isLoading}>
-                <Card title="Linan Blog System" bordered={true} style={{ width: 400 }}>
+                <Card title="jingjing Blog System" bordered={true} style={{ width: 400 }}>
                     {/* prefix加个前缀 图标 */}
                     <Input
                         id="username"

@@ -69,7 +69,7 @@ function AddArticle(props) {
             withCredentials: true, //如果要使用跨域cookie就要加这个，因为我们的中间件就是要检验cookie,所以要加这个
         }).then(
             res => {
-                if (res.data.data == '没有登录') { //这是后台返回的 中间件路由守卫那里返回的
+                if (res.data.data === '没有登录') { //这是后台返回的 中间件路由守卫那里返回的
                     localStorage.removeItem('openId') //没有登录，删除存储信息
                     props.history.push('/') //然后要跳转，需要props
                 } else {
@@ -85,7 +85,7 @@ function AddArticle(props) {
     // 保存文章的时候执行的方法，检验
     const saveArticle = () => { //不用传值了，因为都已经用hooks获得了
         // 是否选择了文章类型,文章标题
-        if (selectedType == '请选择类型') {
+        if (selectedType === '请选择类型') {
             message.error('请选择文章类型');
             return false //直接false,就不用存进数据库
         } else if (!articleTitle) {

@@ -35,6 +35,7 @@ class MainController extends Controller {
   async addArticle() {
     // 取得前台的数据
     const tempArticle = this.ctx.request.body; // 用这个就能取得数据了
+    console.log(tempArticle);
     // 有数据了，然后用egg.mysql存进数据库
     const result = await this.app.mysql.insert('article', tempArticle);
     // 然后需要判断一下是否插入成功

@@ -1,30 +1,30 @@
-import { Avatar, Divider } from 'antd'
+import { Avatar, Divider, Link } from 'antd'
 import '../public/style/components/author.css'
 import {
-    GithubOutlined,
-    QqOutlined,
-    WechatOutlined
+  GithubOutlined,
+  QqOutlined,
+  WechatOutlined
 } from '@ant-design/icons'
 
 // 用react-hooks形式声明组件
 const Author = () => {
-    return (
-        <div className="author-div comm-box">
-            {/* 注意这里的size要用{}包，不能写"" */}
-            <div><Avatar size={100} src="http://pic2.zhimg.com/50/v2-958d33fd4a4de747058adcafdf753074_hd.jpg"></Avatar></div>
-            {/* 介绍 */}
-            <div className="author-introduction">
-            微微就是秋天里每片落叶,微微就是彩虹里每滴雨点,微微她很渺小却从不疲倦,微微就是我们
+  return (
+    <div className="author-div comm-box">
+      {/* 注意这里的size要用{}包，不能写"" */}
+      <div><Avatar size={100} src="http://image.jinghao.xyz/blog/20200422/mvj4kgDNQKaJ.jpg"></Avatar></div>
+      {/* 介绍 */}
+      <div className="author-introduction">
+        东华理工大学软件工程专业大三在校生。一个爱打篮球的大男孩、一个爱打代码的预备程序员。
             {/* antd的分割线，里面可以加入字，可以这样为右侧标签分隔 */}
-            <Divider>社交账号</Divider>
-            {/* 这个图标是antd中自带的，引入Avator就能用(好像v4用不了) */}
-            {/* <Avatar size={28} icon="github" className="account"></Avatar> */}
-            <Avatar size={28} icon={<GithubOutlined />} className="account"></Avatar>
-            <Avatar size={28} icon={<QqOutlined />} className="account"></Avatar>
-            <Avatar size={28} icon={<WechatOutlined />} className="account"></Avatar>
-            </div>
-        </div>
-    )
+        <Divider>社交账号</Divider>
+        {/* 这个图标是antd中自带的，引入Avator就能用(好像v4用不了) */}
+        {/* <Avatar size={28} icon="github" className="account"></Avatar> */}
+        <a href="https://github.com/jingjing20" target="blank"><Avatar size={35} icon={<GithubOutlined />} className="account"></Avatar></a>
+        <a href="http://image.jinghao.xyz/IMG_8035.PNG" target="blank"><Avatar size={35} icon={<QqOutlined />} className="account"></Avatar></a>
+        <a href="http://image.jinghao.xyz/IMG_8034.PNG" target="blank"><Avatar size={35} icon={<WechatOutlined />} className="account"></Avatar></a>
+      </div>
+    </div>
+  )
 }
 
 //把组件导出
