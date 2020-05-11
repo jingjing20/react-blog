@@ -1,4 +1,4 @@
-import '../public/style/components/Advert.css'
+import '../public/style/components/advert.css'
 // 用全静态的形式编写，因为这里面的都是广告，变动的几率很小，如果写到数据库里，每次查询都要用到数据库，这样对数据库的压力很大
 const Advert = () => {
     return (

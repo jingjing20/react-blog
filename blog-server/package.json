@@ -1,5 +1,5 @@
 {
-  "name": "blog-client",
+  "name": "blog-server",
   "version": "1.0.0",
   "description": "",
   "private": true,
@@ -25,7 +25,7 @@
     "node": ">=10.0.0"
   },
   "scripts": {
-    "start": "egg-scripts start --daemon --title=egg-server-service",
+    "start": "egg-scripts start --port=7001 --daemon --title=egg-server-blog-server",
     "stop": "egg-scripts stop --title=egg-server-service",
     "dev": "egg-bin dev",
     "debug": "egg-bin debug",
