@@ -91,10 +91,10 @@ const Detailed = (props) => {
               </div>
               {/* 父简介，有多少人看,需要使用ant的图标 */}
               <div className="list-icon center">
-                <span><CalendarOutlined />2020-05-02</span>
+                <span><CalendarOutlined />{props.addTime}</span>
                 {/* 类别 */}
-                <span><FolderOpenOutlined />视频教程</span>
-                <span><FireOutlined />5498人</span>
+                <span><FolderOpenOutlined />{props.typeName}</span>
+                <span><FireOutlined />{props.view_count}人</span>
               </div>
               {/* 文章主体内容 */}
               <div className="detailed-content"

@@ -63,7 +63,7 @@ const MyList = (list) => {
             <Breadcrumb>
               {/* 里面的子导航，是跳转链接 */}
               <Breadcrumb.Item><a href="/">首页</a></Breadcrumb.Item>
-              <Breadcrumb.Item>技术文章</Breadcrumb.Item>
+              <Breadcrumb.Item>{mylist[0].typeName}</Breadcrumb.Item>
             </Breadcrumb>
           </div>
           {/* 注意List组件是一个半闭合标签的,它里面是通过属性prop进行设置 */}
@@ -119,17 +119,17 @@ MyList.getInitialProps = async (context) => {
   let id = context.query.id //？？
 
   // 传一个resolve,里面的方法就是用axios读取远端的方法，用之前要引入import axios
-  const promise = new Promise((resolve) => {
-    // axios默认的方法就是get，所以直接加括号
-    // 括号里的参数：远端获取数据的参数，是接口地址
-    // 读取完数据后就then,其中的res就是我们获得的结果
-    axios(servicePath.getListById + id).then( //因为要获取id,所以传递一个上下文环境进来context
-
-      (res) => resolve(res.data)
-    )
-  })
+  // const promise = new Promise((resolve) => {
+  //   axios(servicePath.getListById + id).then( 
+  //     (res) => resolve(res.data)
+  //   )
+  // })
   // axios是必须要有一个返回值的,而且必须是await，所以一定要记得加
-  return await promise
+  let res = await axios(servicePath.getListById + id)
+  console.log(res.data)
+
+  return res.data
+  // return await promise
 }
 
 export default MyList

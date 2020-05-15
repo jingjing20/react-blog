@@ -7,11 +7,11 @@ import {
 } from '@ant-design/icons';
 import React, { useState } from 'react'; //hooks组件要加
 import '../static/css/AdminIndex.css';
-import { Route, Router } from 'react-router-dom'
+import { Route } from 'react-router-dom'
 import AddArticle from './AddArticle'
 import ArticleList from './ArticleList'//文章列表
 
-const { Header, Content, Footer, Sider } = Layout;
+const { Content, Footer, Sider } = Layout;
 const { SubMenu } = Menu;
 
 function AdminIndex(props) {

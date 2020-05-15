@@ -14,7 +14,7 @@ import servicePath from '../config/apiUrl' //接口
 import { createFromIconfontCN } from '@ant-design/icons';
 
 const IconFont = createFromIconfontCN({
-	scriptUrl: '//at.alicdn.com/t/font_1797825_a623mg2qqr.js',
+	scriptUrl: '//at.alicdn.com/t/font_1812856_84969pxmv85.js',
 });
 
 // 要使用ant-design的24扇格布局，需要用到里面的东西
@@ -71,16 +71,14 @@ const Header = () => {
 						{/* 首页要配置死，key传0 */}
 						<Menu.Item key="0">
 							{/* <Icon type="home" /> */}
-							<IconFont type="icon-home" />
-                            首页
-                        </Menu.Item>
+							<IconFont type="icon-shouye" />首页
+            </Menu.Item>
 						{
 							navArray.map((item) => {
 								return (
 									// <Menu.Item key={item.id} icon={<YoutubeOutlined />}>
 									<Menu.Item key={item.id}>
 										<IconFont type={item.icon} />
-										{/* 视频 */}
 										{item.typeName}
 									</Menu.Item>
 								)

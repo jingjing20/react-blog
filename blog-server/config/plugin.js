@@ -19,4 +19,4 @@ exports.mysql = {
 exports.cors = {
   enable: true,
   package: 'egg-cors', // 开哪个模块
-}
+};

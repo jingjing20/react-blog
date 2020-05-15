@@ -3,7 +3,7 @@ import marked from 'marked' //要安装一下 //处理markdown的
 // 还要使用一个css样式
 import '../static/css/AddArticle.css'
 // 使用antd中想要的组件
-//因为是表单，所以肯定有input,还有对类别进行选择的组件Select,提交按钮,日期选择
+// 因为是表单，所以肯定有input,还有对类别进行选择的组件Select,提交按钮,日期选择
 import { Row, Col, Input, Select, Button, DatePicker, message } from 'antd'
 import axios from 'axios' //引入后台获得数据的方法
 import servicePath from '../config/apiUrl'
@@ -19,7 +19,6 @@ function AddArticle(props) {
     const [introducemd, setIntroducemd] = useState()            //简介的markdown内容
     const [introducehtml, setIntroducehtml] = useState('等待编辑') //简介的html内容
     const [showDate, setShowDate] = useState()   //发布日期
-    const [updateDate, setUpdateDate] = useState() //修改日志的日期
     const [typeInfo, setTypeInfo] = useState([]) // 文章类别信息//这里会从后台读出所有文章分类
     const [selectedType, setSelectType] = useState('请选择类型') //选择的文章类别
 
@@ -33,6 +32,7 @@ function AddArticle(props) {
             setArticleId(tmpId)
             getArticleById(tmpId)
         }
+        // eslint-disable-next-line
     }, [])
     // 设置marked
     const renderer = new marked.Renderer()
