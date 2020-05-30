@@ -1,4 +1,4 @@
-let ipUrl = 'http://182.92.203.140/admin/';//默认的部分
+let ipUrl = 'http://127.0.0.1:7001/admin/';//默认的部分
 // 到时候换成了网址，直接在这里复制。该网址就行
 
 let servicePath = {//服务端的地址

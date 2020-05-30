@@ -51,7 +51,7 @@ class MainController extends Controller {
     };
     // console.log(isSuccess);
   }
-  async updataArticle() {
+  async updateArticle() {
     // 获得数据，然后发给数据库
     // this.ctx.request.body可以获得post传过来的参数
     const tempArticle = this.ctx.request.body;
@@ -92,29 +92,22 @@ class MainController extends Controller {
   // 先要获得要修改的文章，根据文章id获得
   async getArticleById() {
     const id = this.ctx.params.id;
-    // 应该再判断一下后台有没有这个id
-    const have = await this.app.mysql.get('article', { id });
-    if (!have) {
-      this.ctx.body = { data: '' };
-      // console.log('no data');
-    } else {
-      // 要获得文章的各个信息
-      const sql = 'SELECT article.id as id ,' +
-        'article.title as title ,' +
-        'article.introduce as introduce ,' +
-        'article.article_content as article_content ,' +
-        // 这里不需要获得时分秒
-        "DATE_FORMAT(article.addTime,'%Y-%m-%d' ) as addTime ," + // 格式化时间
-        'article.view_count as view_count ,' +
-        'type.typeName as typeName ,' +
-        'type.id as typeId ' + // 需要加一个
-        'FROM article LEFT JOIN type ON article.type_id = type.id ';
-      'WHERE article.id =' + id;
-      const result = await this.app.mysql.query(sql);
-      // 传递出去,是否有这个id
-      this.ctx.body = { isSuccess: 'ok', data: result };
-    }
+
+    const sql = 'SELECT article.id as id,' +
+      'article.title as title,' +
+      'article.introduce as introduce,' +
+      'article.article_content as article_content,' +
+      "DATE_FORMAT(article.addTime,'%Y-%m-%d' ) as addTime," +
+      'article.view_count as view_count ,' +
+      'type.typeName as typeName ,' +
+      'type.id as typeId ' +
+      'FROM article LEFT JOIN type ON article.type_id = type.Id ' +
+      'WHERE article.id=' + id;
+    const result = await this.app.mysql.query(sql);
+    console.log(result);
+    this.ctx.body = { data: result };
   }
+
 }
 
 // 暴露出去

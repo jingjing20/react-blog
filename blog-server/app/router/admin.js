@@ -11,7 +11,7 @@ module.exports = app => {
   // 守卫放在第二个参数处，他会自动帮我们进行中间件（其实这个不叫守卫，在egg.js中叫做中间件）
   // 保存文章内容 也加上路由守卫
   router.post('/admin/addArticle', adminauth, controller.admin.main.addArticle);// 使用路由守卫
-  router.post('/admin/updataArticle', adminauth, controller.admin.main.updataArticle);// 使用路由守卫
+  router.post('/admin/updateArticle', adminauth, controller.admin.main.updateArticle);// 使用路由守卫
   router.get('/admin/getArticleList', adminauth, controller.admin.main.getArticleList);// 使用路由守卫
   router.get('/admin/delArticle/:id', adminauth, controller.admin.main.delArticle);// 使用路由守卫
   router.get('/admin/getArticleById/:id', adminauth, controller.admin.main.getArticleById);// 使用路由守卫
